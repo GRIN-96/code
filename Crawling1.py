@@ -3,9 +3,9 @@ from bs4 import BeautifulSoup
 import urllib.request
 from urllib.parse import quote
 
-TARGET_URL_BEFORE_PAGE_NUM = "http://news.donga.com/search?p="
-TARGET_URL_BEFORE_KEWORD = '&query='
-TARGET_URL_REST = '&check_news=1&more=1&sorting=3&search_date=1&v1=&v2=&range=3'
+TARGET_URL_BEFORE_PAGE_NUM = "http://"
+TARGET_URL_BEFORE_KEWORD = ''
+TARGET_URL_REST = ''
 
 #기사 검색 페이지에서 기사 제목에 링크된 기사 본문 주소 받아오기
 def get_link_form_news_title(page_num, URL, output_file):
