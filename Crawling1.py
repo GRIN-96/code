@@ -3,9 +3,9 @@ from bs4 import BeautifulSoup
 import urllib.request
 from urllib.parse import quote
 
-TARGET_URL_BEFORE_PAGE_NUM = "http://"
-TARGET_URL_BEFORE_KEWORD = ''
-TARGET_URL_REST = ''
+TARGET_URL_BEFORE_PAGE_NUM = "http://"   # 크롤링 하고 싶은 주소 입력
+TARGET_URL_BEFORE_KEWORD = ''   # 찾고자 하는 키워드
+TARGET_URL_REST = ''   # 크롤링 하고싶은 페이지 
 
 #기사 검색 페이지에서 기사 제목에 링크된 기사 본문 주소 받아오기
 def get_link_form_news_title(page_num, URL, output_file):
