@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+</head>
+<body>
+	<h2>DEPTNO 입력</h2>
+	
+	<form action = "dept" method = "get">
+		<input type = "text" name = "deptno" placeholder="deptno 입력해주세요"><br /><br />
+		
+		
+		<select id="dan" name="commend" onchange="formChange(this.form)"> <!--formChange(this) 여기서 this는 select 자체
+																			  하지만formChange(this.form)은 select폼 자체를 의미함.  -->
+				<option>==기능 선택==</option>
+				<option value="search">조회하기</option>
+				<option value="delete">삭제하기</option>
+				<option value="update">수정하기</option>
+		</select><br /><br />
+		<input type = "submit" value = "확인">
+	</form>
+</body>
+</html>
