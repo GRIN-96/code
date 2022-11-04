@@ -1,0 +1,61 @@
+import React, { useState, useRef, useEffect } from "react";
+
+function UseRef2() {
+    let number = 0;
+    
+    const refNumber = useRef(0);
+    
+    const updateRefNumber = () => {
+        refNumber.current = refNumber.current + 1;
+        console.log("RefNumber : ",refNumber.current);
+    }
+    const updateNumber = () => {
+        number = number + 1;
+        console.log("Number : ",number);
+    }
+
+    const [renderVar, setRenderVar] = useState(0);
+    const rederPage = () => {
+        setRenderVar(renderVar + 1);
+    }
+
+    const rederNumbers = () => {
+        console.log("Show Numbers");
+        console.log("Number : ",number, " - RefNumber : ",refNumber.current);
+    }
+
+    const inputRef = useRef();
+    console.log(inputRef);
+
+    useEffect(() => {
+        // console.log(inputRef.current);
+        inputRef.current.focus();    // input 박스 안에 auto focus해줌
+    },[])
+
+    return (
+            <div>
+                <div>
+                    <input ref={inputRef} />
+                </div>
+                <hr/>
+                <div>
+                    <p>Number : {number}</p>
+                    <button onClick={updateNumber}>Number+1</button>
+                </div>
+                <hr />
+                <div>
+                    <p>RefNumber : {refNumber.current}</p>
+                    <button onClick={updateRefNumber}>RefNumber+1</button>
+                </div>
+                <hr />
+                <div>
+                    <button onClick={rederPage}>Render</button>
+                </div>
+                <div>
+                    <button onClick={rederNumbers}>Show Numbers</button>
+                </div>
+            </div>
+    );
+};
+
+export default UseRef2;
